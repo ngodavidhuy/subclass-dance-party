@@ -42,6 +42,34 @@ makeDancer.prototype.step = function() {
   setTimeout(this.step.bind(this), this.timeBetweenSteps);
 };
 
+makeDancer.prototype.scatter = function() {
+  this.setPosition($('body').height() * Math.random(), $('body').width() * Math.random());
+};
+
+makeDancer.prototype.lineUpTop = function() {
+  this.$node.animate({
+    top: $('body').height() * 0.1
+  });
+};
+
+makeDancer.prototype.lineUpBottom = function() {
+  this.$node.animate({
+    top: $('body').height() * 0.9
+  });
+};
+
+makeDancer.prototype.lineUpLeft = function() {
+  this.$node.animate({
+    left: $('body').width() * 0.2
+  });
+};
+
+makeDancer.prototype.lineUpRight = function() {
+  this.$node.animate({
+    left: $('body').width() * 0.8
+  });
+};
+
 makeDancer.prototype.setPosition = function(top, left) {
   var styleSettings = {
     top: top,
