@@ -1,14 +1,13 @@
-var makeLineDancer = function(top, left, timeBetweenSteps) {
+var makeThrustDancer = function(top, left, timeBetweenSteps) {
   makeDancer.call(this, top, left, timeBetweenSteps);
-  this.$node = $('<span class="lineDancer"></span>');
+  this.$node = $('<span class="dancer"><img class="deadpool-1" src="img/deadpool_1.gif"></span>');
+  this.setPosition($('body').height() * Math.random(), $('body').width() * Math.random());
 };
 
-makeLineDancer.prototype = Object.create(makeDancer.prototype);
-makeLineDancer.prototype.constructor = makeLineDancer;
+makeThrustDancer.prototype = Object.create(makeDancer.prototype);
+makeThrustDancer.prototype.constructor = makeThrustDancer;
 
-makeLineDancer.prototype.oldStep = makeDancer.prototype.step;
-
-makeLineDancer.prototype.step = function() {
-  this.oldStep();
-  this.$node.animate({'left' : Math.random() * 900}).animate({'top' : Math.random() * 400});
+makeThrustDancer.prototype.step = function() {
+  makeDancer.prototype.step.call(this);
+  this.$node.show();
 };
