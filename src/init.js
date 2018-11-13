@@ -30,7 +30,38 @@ $(document).ready(function() {
       $('body').width() * Math.random(),
       Math.random() * 2500
     );
+    window.dancers.push(dancer);
     $('body').append(dancer.$node);
+  });
+
+  $('.lineUpTop').on('click', function() {
+    for (var i = 0; i < window.dancers.length; i++) {
+      window.dancers[i].lineUpTop();
+    }
+  });
+
+  $('.lineUpBottom').on('click', function() {
+    for (var i = 0; i < window.dancers.length; i++) {
+      window.dancers[i].lineUpBottom();
+    }
+  });
+
+  $('.lineUpLeft').on('click', function() {
+    for (var i = 0; i < window.dancers.length; i++) {
+      window.dancers[i].lineUpLeft();
+    }
+  });
+
+  $('.lineUpRight').on('click', function() {
+    for (var i = 0; i < window.dancers.length; i++) {
+      window.dancers[i].lineUpRight();
+    }
+  });
+
+  $('.scatter').on('click', function() {
+    for (var i = 0; i < window.dancers.length; i++) {
+      window.dancers[i].scatter();
+    }
   });
 
   
