@@ -2,17 +2,20 @@ body, html{
   height:100%;
 }
 body{
+  background-image: url('img/deadpool_bg.png');
+  background-repeat: no-repeat;
   margin: 0px;
   background-color:#444;
   font-size: 18px;
 }
 body, a:link, a:visited, a:active{
-  color: lightblue;
+  color: red;
 }
-.title, .addDancerButton{
+.title, .addDancerButton, .lineUp{
   padding:5px 12px;
   float:right;
 }
+
 .topbar{
   height:32px;
   background-color: #555;
@@ -21,14 +24,35 @@ body, a:link, a:visited, a:active{
   background-color: #777;
 }
 .dancer{
-  border:10px solid red;
-  border-radius:10px;
   position:absolute;
 }
 
-.lineDancer{
-  border:10px solid yellow;
-  border-radius:10px;
-  position:absolute;
-  transform: rotate(180deg);
+.deadpool-1:hover {
+  transform: scale(1.2) rotate(360deg);
+  transition: all 1s;
+}
+
+.deadpool-1 {
+  width: 110px;
+  height: 160px;
+}
+
+.deadpool-2:hover {
+  transform: scale(3);
+  transition: all 1s;
+}
+
+.deadpool-2 {
+  width: 124px;
+  height: 220px;
+}
+
+.deadpool-3:hover {
+  transform: scale(1.5);
+  transition: all 1s;
+}
+
+.deadpool-3 {
+  width: 150px;
+  height: 150px;
 }
