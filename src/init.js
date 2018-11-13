@@ -1,5 +1,6 @@
 $(document).ready(function() {
   window.dancers = [];
+  window.dancers2 = [];
 
   $('.addDancerButton').on('click', function(event) {
     /* This function sets up the click handlers for the create-dancer
@@ -21,6 +22,7 @@ $(document).ready(function() {
     // console.log(window[dancerMakerFunctionName]);
     // get the maker function for the kind of dancer we're supposed to make
     var dancerMakerFunction = window[dancerMakerFunctionName];
+
     
 
     // make a dancer with a random position
@@ -30,8 +32,16 @@ $(document).ready(function() {
       $('body').width() * Math.random(),
       Math.random() * 2500
     );
-    window.dancers.push(dancer);
+
+
+    if (dancerMakerFunction === 'makeBlinkyDancer') {
+      window.dancers2.push(dancer);
+    } else {
+      window.dancers.push(dancer);
+    }
+    
     $('body').append(dancer.$node);
+    console.log(dancerMakerFunction);
   });
 
   $('.lineUpTop').on('click', function() {

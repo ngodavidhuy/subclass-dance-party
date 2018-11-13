@@ -29,6 +29,8 @@ makeBlinkyDancer.prototype.constructor = makeBlinkyDancer;
 
 makeBlinkyDancer.prototype.step = function() {
   makeDancer.prototype.step.call(this);
-  this.$node.animate({ top: 5000 }, 6000);
+  this.$node.animate({ top: 5000 }, 8000).hide(3000);
+  // this.$node.delay(3000);
+  // this.$node.hide();
 };
 
